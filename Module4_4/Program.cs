@@ -21,6 +21,36 @@ namespace Module4_4
             Console.WriteLine($"array1: {string.Join(", ", array1)}");
                 Console.Write($"array2: {string.Join(", ", array2)}");
             Console.ReadLine();
+
+            #region Count all duplicates in the array
+            var arr = new int[10];
+
+            for (var i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"Please input value with index {i}");
+
+                if (int.TryParse(Console.ReadLine(), out var input))
+                {
+                    arr[i] = input;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input!");
+                }
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] == arr[j])
+                    {
+                        Console.WriteLine($"Duplicate number is: {arr[i]}");
+                    }
+                }
+            }
+            Console.ReadLine();
+            #endregion
         }
     }
 }
