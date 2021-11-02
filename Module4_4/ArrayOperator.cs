@@ -8,46 +8,33 @@ namespace Module4_4
 {
     public class ArrayOperator
     {
+        private int[] array1;
+        private int[] array2;
+
+        public ArrayOperator(int[] array1, int arrSize2)
+        {
+            this.array1 = array1;
+            this.array2 = new int[arrSize2];
+        }
+
+        public int[] Array1
+        {
+            get { return Array1; }
+            set { Array1 = value; }
+        }
+
+        public int[] Array2
+        {
+            get { return array2; }
+            set { Array2 = value; }
+        }
+
         public void CopyOfArray()
         {
-            int[] array1 = { 12, 223, 3343, 45345, 23423, 23, 1112, 456, 33, 1 };
             int[] array2 = array1;
             Console.WriteLine($"array1: {string.Join(", ", array1)}");
             Console.Write($"array2: {string.Join(", ", array2)}");
             Console.ReadLine();
-        }
-
-        public int[] arr = new int[10];
-
-        public void InputValues()
-        {
-            for (var i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine($"Please input value with index {i}");
-
-                if (int.TryParse(Console.ReadLine(), out var input))
-                {
-                    arr[i] = input;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect input!");
-                }
-            }
-        }
-
-        public void CountDuplicates()
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = i + 1; j < arr.Length; j++)
-                {
-                    if (arr[i] == arr[j])
-                    {
-                        Console.WriteLine($"Duplicate number is: {arr[i]}");
-                    }
-                }
-            }
         }
     }
 }
